@@ -32,12 +32,11 @@ const Header = () => {
                         <div className="fs-3 fw-bold text-dark">
                             <Link to="/" className="text-decoration-none text-primary1">Farmer Fridge</Link><span className="text-info">.</span>
                         </div>
-
                     </div>
 
                     {/* Desktop Nav */}
                     <nav className="d-none d-md-flex align-items-center gap-4">
-                        <Link to="/" className=" text-white text-decoration-none pb-1">Home</Link>
+                        <Link to="/Menu" className=" text-white text-decoration-none pb-1">Menu</Link>
                         <div
                             className="position-relative"
                             onMouseEnter={() => setShowMealPlan(true)}
@@ -52,15 +51,15 @@ const Header = () => {
                             {showMealPlan && (
                                 <div className="dropdown-menu-custom">
                                     <ul className="list-unstyled mb-0">
-                                        <li><Link to="/TherapeuticPlan" className="dropdown-item-custom">Our Story</Link></li>
-                                        <li><Link to="/TherapeuticPlan1" className="dropdown-item-custom">Our App </Link></li>
-                                        <li><Link to="/TherapeuticPlan2" className="dropdown-item-custom">Careers</Link></li>
+                                        <li><Link to="/Story" className="dropdown-item-custom">Our Story</Link></li>
+                                        <li><Link to="/app" className="dropdown-item-custom">Our App </Link></li>
+                                        <li><Link to="/career" className="dropdown-item-custom">Careers</Link></li>
                                     </ul>
                                 </div>
                             )}
                         </div>
-                        <Link to="/About" className="text-white text-decoration-none">Location</Link>
-                        <Link to="/blog" className="text-white text-decoration-none">Get Location</Link>
+                        <Link to="/location" className="text-white text-decoration-none">Location</Link>
+                        <Link to="/getfridge" className="text-white text-decoration-none">Get Location</Link>
                     </nav>
 
                     {/* Mobile Menu Button */}
@@ -88,7 +87,7 @@ const Header = () => {
                 {/* Mobile Dropdown */}
                 {mobileMenuOpen && (
                     <div className="d-md-none mt-3 bg-white border-top border-secondary  position-absolute top-100 start-0 w-100 z-3 p-3 shadow">
-                        <Link to="/" className="d-block mb-2 text-decoration-none">Home</Link>
+                        <Link to="/Menu" className="d-block mb-2 text-decoration-none">Menu</Link>
                         <button
                             onClick={() => setShowMealPlan(!showMealPlan)}
                             className="btn btn-link d-flex justify-content-between text-decoration-none w-100 p-0"
@@ -100,14 +99,14 @@ const Header = () => {
                         </button>
                         {showMealPlan && (
                             <div className="ms-3">
-                                <li><Link to="/TherapeuticPlan" className="text-decoration-none" >Our Story</Link></li>
-                                <li><Link to="/TherapeuticPlan1" className="text-decoration-none" >Our App </Link></li>
-                                <li><Link to="/TherapeuticPlan2" className="text-decoration-none" >Careers</Link></li>
+                                <li><Link to="/Story" className="text-decoration-none" >Our Story</Link></li>
+                                <li><Link to="/app" className="text-decoration-none" >Our App </Link></li>
+                                <li><Link to="/career" className="text-decoration-none" >Careers</Link></li>
 
                             </div>
                         )}
-                        <Link to="/about" className="d-block mt-2 text-decoration-none">Location</Link>
-                        <Link to="/blog" className="d-block text-decoration-none">Get Fridge</Link>
+                        <Link to="/location" className="d-block mt-2 text-decoration-none">Location</Link>
+                        <Link to="/getfridge" className="d-block text-decoration-none">Get Fridge</Link>
                     </div>
                 )}
             </header>
