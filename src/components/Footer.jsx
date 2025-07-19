@@ -9,7 +9,6 @@ const Footer = () => {
       <div className="container">
         <div className="row">
 
-          {/* Our Company */}
           <div className="col-md-3 mb-4">
             <h6 className="footer-heading">Our Company</h6>
             <ul className="list-unstyled">
@@ -21,7 +20,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support */}
           <div className="col-md-3 mb-4">
             <h6 className="footer-heading">Support</h6>
             <ul className="list-unstyled">
@@ -32,7 +30,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div className="col-md-6 mb-4">
             <h6 className="footer-heading">Join our Newsletter</h6>
             <p className="text-muted">Join our mailing list to get exclusive promos, new menu updates, and much more!</p>
@@ -67,7 +64,7 @@ const Footer = () => {
           <div className="col-md-4 text-md-end mt-3 mt-md-0">
             <a href="#" className="text-light me-3 text-decoration-none">Terms & Conditions</a>
             <a href="#" className="text-light text-decoration-none">Privacy Policy</a>
-            <div><small>© 2025, Farmer's Fridge</small></div>
+            <div><small>© 2025, DietIn</small></div>
           </div>
         </div>
       </div>

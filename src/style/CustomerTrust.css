@@ -1,8 +1,8 @@
 .customer-trust-section {
-  background-image: url('/image/14.png'); 
-  background-size: fill;
+  background-image: url('/image/14.jpg'); 
+  background-size: cover;
   background-position: center;
-  height: 80vh; 
+  height: 70vh; 
   position: relative;
 }
 

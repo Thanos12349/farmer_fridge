@@ -1,6 +1,6 @@
 /* Header.css */
 .main_header {
-    background: linear-gradient(to bottom, #015122 100%) !important;
+    background: linear-gradient(to bottom, #f9fbfa ,#9b9c9e ) !important;
 }
 
 .hover-icon:hover {
@@ -48,9 +48,9 @@
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #0b0a0a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .text-primary1 {
-  color: white !important;
+  color: rgb(11, 0, 0) !important;
 }

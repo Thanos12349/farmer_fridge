@@ -85,7 +85,7 @@ const Career = () => {
             </strong>
           </h3>
           <p>
-            At Farmer’s Fridge, we’re on a mission to make healthier (and
+            At DietIn, we’re on a mission to make healthier (and
             delicious) meals on the go...
           </p>
         </div>
@@ -136,9 +136,6 @@ const Career = () => {
     </div>
   </div>
 </div>
-
-
-
             <Sms />
             <Footer />
         </div>

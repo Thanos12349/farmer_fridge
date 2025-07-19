@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 .highlight-section {
-  background: linear-gradient(135deg, #277901); /* Gradient green */
+  background : linear-gradient(to bottom, #4018c4, #3956ad, #6b88a5, #81bbf4);
   color: white;
 }
 
@@ -111,7 +111,7 @@
   }
 }
 .fridge-info-section {
-  background-color: #327b00; /* Rich green */
+  background : linear-gradient(to bottom, #4018c4, #3956ad, #6b88a5, #81bbf4);
 }
 
 .fridge-info-section h3 {

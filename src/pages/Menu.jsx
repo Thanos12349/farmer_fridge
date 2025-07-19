@@ -4,7 +4,7 @@ import './Menu.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Sms from '../components/sms';
-import qrImage from '/image/download.svg'; 
+import qrImage from '/image/download.svg';
 import appStoreBadge from '/image/google.webp';
 import playStoreBadge from '/image/apple.webp';
 
@@ -177,7 +177,7 @@ const menuData = {
       image: '/image/09.png',
       backImage: '/image/05.jpg'
     },
-    
+
   ],
   Sandwiches: [
     {
@@ -248,12 +248,12 @@ const menuData = {
       sandwich: '430 Cal',
       image: '/image/09.png',
       backImage: '/image/05.jpg'
-    },{
+    }, {
       name: 'Chocolate Chia Pudding',
       sandwich: '430 Cal',
       image: '/image/09.png',
       backImage: '/image/05.jpg'
-    },{
+    }, {
       name: 'Sweet Street Chewy Marshmallow Bar',
       sandwich: '430 Cal',
       image: '/image/09.png',
@@ -293,170 +293,288 @@ const menuData = {
     },
   ],
   Drinks: [{
-      name: 'LaCroix Lime',
-      sandwich: '430 Cal',
-      image: '/image/09.png',
-      backImage: '/image/05.jpg'
-    },{
-      name: 'Spindrift Blood Orange Tangerine',
-      sandwich: '430 Cal',
-      image: '/image/09.png',
-      backImage: '/image/05.jpg'
-    },{
-      name: 'La Colombe Oatmilk Vanilla Latte',
-      sandwich: '430 Cal',
-      image: '/image/09.png',
-      backImage: '/image/05.jpg'
-    },{
-      name: 'LaCroix Pamplemousse',
-      sandwich: '430 Cal',
-      image: '/image/09.png',
-      backImage: '/image/05.jpg'
-    },{
-      name: 'La Colombe Triple Draft Latte',
-      sandwich: '430 Cal',
-      image: '/image/09.png',
-      backImage: '/image/05.jpg'
-    },],
+    name: 'LaCroix Lime',
+    sandwich: '430 Cal',
+    image: '/image/09.png',
+    backImage: '/image/05.jpg'
+  }, {
+    name: 'Spindrift Blood Orange Tangerine',
+    sandwich: '430 Cal',
+    image: '/image/09.png',
+    backImage: '/image/05.jpg'
+  }, {
+    name: 'La Colombe Oatmilk Vanilla Latte',
+    sandwich: '430 Cal',
+    image: '/image/09.png',
+    backImage: '/image/05.jpg'
+  }, {
+    name: 'LaCroix Pamplemousse',
+    sandwich: '430 Cal',
+    image: '/image/09.png',
+    backImage: '/image/05.jpg'
+  }, {
+    name: 'La Colombe Triple Draft Latte',
+    sandwich: '430 Cal',
+    image: '/image/09.png',
+    backImage: '/image/05.jpg'
+  },],
 };
 
 const Menu = () => {
   const categories = Object.keys(menuData);
   const [activeCategory, setActiveCategory] = useState('Salads');
+  const [counts, setCounts] = useState({});
+const incrementCount = (itemName) => {
+    setCounts((prev) => ({ ...prev, [itemName]: (prev[itemName] || 0) + 1 }));
+  };
+
+const decrementCount = (itemName) => {
+    setCounts((prev) => ({
+      ...prev,
+      [itemName]: prev[itemName] > 1 ? prev[itemName] - 1 : 0,
+    }));
+  };
+
 
   return (
     <>
-    <Header />
-    <div className="container py-4">
-      <h2 className="mb-4">Menu</h2>
+      <Header />
+      <div className="container py-4">
+        <h2 className="mb-4">Menu</h2>
 
-      <div className="d-flex flex-wrap gap-2 mb-4">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={`btn ${activeCategory === category ? 'btn-success' : 'btn-outline-secondary'}`}
-            onClick={() => setActiveCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+        <div className="d-flex flex-wrap gap-2 mb-4">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`btn ${activeCategory === category ? 'btn-primary' : 'btn-outline-secondary'}`}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
-      <div className="row">
-        {menuData[activeCategory].map((item, index) => (
-          <div className="col-md-4 mb-4" key={index}>
-            <div className="flip-card">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">
-                  <img src={item.image} alt={item.name} className="img-fluid rounded" />
-                </div>
-                <div className="flip-card-back">
-                  <img src={item.backImage || item.image} alt={item.name} className="img-fluid rounded" />
+        <div className="row">
+          {menuData[activeCategory].map((item, index) => (
+            <div className="col-md-4 mb-4" key={index}>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={item.image} alt={item.name} className="img-fluid rounded" />
+                  </div>
+                  <div className="flip-card-back">
+                    <img src={item.backImage || item.image} alt={item.name} className="img-fluid rounded" />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="card-text-content">
-              <h5>{item.name}</h5>
-              {activeCategory === 'Salads' && (
-                <>
-                  <p>Salad: {item.saladCal}</p>
-                  <p>Dressing: {item.dressingCal}</p>
-                </>
-              )}
-              {activeCategory === 'Breakfast' && (<><p>Bowl: {item.Bowl}</p><p>Granola: {item.Granola}</p></>)}
-              {activeCategory === 'Bowls' && (<><p>Bowl: {item.Bowl}<p>Sauce: {item.Sauce}</p></p></>)}
-              {activeCategory === 'Protein_Bowls' && (<><p>Bowl: {item.Bowl}<p>Sauce: {item.Sauce}</p></p></>)}
-              {activeCategory === 'Sandwiches' && <p> {item.sandwich}</p>}
-              {activeCategory === 'Snacks' && <p>{item.sandwich}</p>}
-              {activeCategory === 'Proteins' && <p>{item.sandwich}</p>}
-              {activeCategory === 'Drinks' && <p>{item.sandwich}</p>}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-    <div
-  className="sms-app-section"
-  style={{
-    backgroundColor: '#004225',
-    color: 'white',
-    padding: '1rem 0',
-  }}
->
-  <div className="container-fluid">
-    <div className="row align-items-center">
-      {/* Left Side - Image */}
-      <div
-        className="col-md-6"
-        style={{
-          textAlign: 'center',
-          padding: '1rem',
-        }}
-      >
-        <img
-          src="/image/13.png"
-          alt="Background"
-          style={{
-            width: '100%',
-            height: '200px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-            maxHeight: '800px',
-            objectFit: 'Strectch',
-          }}
-        />
-      </div>
+              <div className="card-text-content">
+                <h5>{item.name}</h5>
+                {activeCategory === 'Salads' && (
+                  <>
+                    <p>Salad: {item.saladCal}</p>
+                    <p>Dressing: {item.dressingCal}</p>
+                    <p>{item.sandwich}</p>
+                    {counts[item.name] > 0 ? (
+                      <div className="d-flex justify-content-center gap-2 align-items-center">
+                        <button onClick={() => decrementCount(item.name)} className="btn1 btn-danger">-</button>
+                        <span>{counts[item.name]}</span>
+                        <button onClick={() => incrementCount(item.name)} className="btn2 btn-success">+</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => incrementCount(item.name)} className="btn btn-primary">Add</button>
+                    )}
+                  </>
+                )}
+                {activeCategory === 'Breakfast' && (<><p>Bowl: {item.Bowl}</p><p>Granola: {item.Granola}</p>
+                <p>{item.sandwich}</p>
+                    {counts[item.name] > 0 ? (
+                      <div className="d-flex justify-content-center gap-2 align-items-center">
+                        <button onClick={() => decrementCount(item.name)} className="btn1 btn-danger">-</button>
+                        <span>{counts[item.name]}</span>
+                        <button onClick={() => incrementCount(item.name)} className="btn2 btn-success">+</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => incrementCount(item.name)} className="btn btn-primary">Add</button>
+                    )}
+                </>)}
+                {activeCategory === 'Bowls' && (
+                  <>
+                    <p>Bowl: {item.Bowl}</p>
+                    <p>Sauce: {item.Sauce}</p>
+                    <p>{item.sandwich}</p>
+                    {counts[item.name] > 0 ? (
+                      <div className="d-flex justify-content-center gap-2 align-items-center">
+                        <button onClick={() => decrementCount(item.name)} className="btn1 btn-danger">-</button>
+                        <span>{counts[item.name]}</span>
+                        <button onClick={() => incrementCount(item.name)} className="btn2 btn-success">+</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => incrementCount(item.name)} className="btn btn-primary">Add</button>
+                    )}
+                  </>
+                )}
+                {activeCategory === 'Protein_Bowls' && (
+                  <>
+                    <p>Bowl: {item.Bowl}</p>
+                    <p>Sauce: {item.Sauce}</p>
+                    <p>{item.sandwich}</p>
+                    {counts[item.name] > 0 ? (
+                      <div className="d-flex justify-content-center gap-2 align-items-center">
+                        <button onClick={() => decrementCount(item.name)} className="btn1 btn-danger">-</button>
+                        <span>{counts[item.name]}</span>
+                        <button onClick={() => incrementCount(item.name)} className="btn2 btn-success">+</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => incrementCount(item.name)} className="btn btn-primary">Add</button>
+                    )}
+                  </>
+                )}
+                {activeCategory === 'Sandwiches' && (
+                  <>
+                    <p>{item.sandwich}</p>
+                    {counts[item.name] > 0 ? (
+                      <div className="d-flex justify-content-center gap-2 align-items-center">
+                        <button onClick={() => decrementCount(item.name)} className="btn1 btn-danger">-</button>
+                        <span>{counts[item.name]}</span>
+                        <button onClick={() => incrementCount(item.name)} className="btn2 btn-success">+</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => incrementCount(item.name)} className="btn btn-primary">Add</button>
+                    )}
+                  </>
+                )}
 
-      {/* Right Side - App Section */}
-      <div
-        className="col-md-6"
-        style={{
-          padding: '2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-        }}
-      >
-        <h5 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-          Download our app
-        </h5>
-        <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>
-          Download today to easily reserve items at the Fridge and earn rewards on Fridge purchases.
-        </p>
+                {activeCategory === 'Snacks' && (
+                  <>
+                    <p>{item.sandwich}</p>
+                    {counts[item.name] > 0 ? (
+                      <div className="d-flex justify-content-center gap-2 align-items-center">
+                        <button onClick={() => decrementCount(item.name)} className="btn1 btn-danger">-</button>
+                        <span>{counts[item.name]}</span>
+                        <button onClick={() => incrementCount(item.name)} className="btn2 btn-success">+</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => incrementCount(item.name)} className="btn btn-primary">Add</button>
+                    )}
+                  </>
+                )}
 
-        <div
-          className="d-flex align-items-center gap-3 flex-wrap"
-          style={{ gap: '1rem', flexWrap: 'wrap' }}
-        >
-          <img
-            src={qrImage}
-            alt="QR Code"
-            style={{
-              width: '100px',
-              height: '100px',
-              borderRadius: '8px',
-              backgroundColor: '#fff',
-              padding: '0.5rem',
-            }}
-          />
-          <img
-            src={appStoreBadge}
-            alt="App Store"
-            style={{ height: '40px' }}
-          />
-          <img
-            src={playStoreBadge}
-            alt="Google Play"
-            style={{ height: '40px' }}
-          />
+                {activeCategory === 'Proteins' && (
+                  <>
+                    <p>{item.sandwich}</p>
+                    {counts[item.name] > 0 ? (
+                      <div className="d-flex justify-content-center gap-2 align-items-center">
+                        <button onClick={() => decrementCount(item.name)} className="btn1 btn-danger">-</button>
+                        <span>{counts[item.name]}</span>
+                        <button onClick={() => incrementCount(item.name)} className="btn2 btn-success">+</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => incrementCount(item.name)} className="btn btn-primary">Add</button>
+                    )}
+                  </>
+                )}
+
+                {activeCategory === 'Drinks' && (
+                  <>
+                    <p>{item.sandwich}</p>
+                    {counts[item.name] > 0 ? (
+                      <div className="d-flex justify-content-center gap-2 align-items-center">
+                        <button onClick={() => decrementCount(item.name)} className="btn1 btn-danger">-</button>
+                        <span>{counts[item.name]}</span>
+                        <button onClick={() => incrementCount(item.name)} className="btn2 btn-success">+</button>
+                      </div>
+                    ) : (
+                      <button onClick={() => incrementCount(item.name)} className="btn btn-primary">Add</button>
+                    )}
+                  </>
+                )}
+
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      <div
+        className="sms-app-section"
+        style={{
+          backgroundColor: '#000d4c',
+          color: 'white',
+          padding: '1rem 0',
+        }}
+      >
+        <div className="container-fluid">
+          <div className="row align-items-center">
 
-    <Sms/>
-    <Footer />
+            <div
+              className="col-md-6"
+              style={{
+                textAlign: 'center',
+                padding: '1rem',
+              }}
+            >
+              <img
+                src="/image/13.png"
+                alt="Background"
+                style={{
+                  width: '100%',
+                  height: '200px',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                  maxHeight: '800px',
+                  objectFit: 'Strectch',
+                }}
+              />
+            </div>
+
+            <div
+              className="col-md-6"
+              style={{
+                padding: '2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}
+            >
+              <h5 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+                Download our app
+              </h5>
+              <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>
+                Download today to easily reserve items at the Fridge and earn rewards on Fridge purchases.
+              </p>
+
+              <div
+                className="d-flex align-items-center gap-3 flex-wrap"
+                style={{ gap: '1rem', flexWrap: 'wrap' }}
+              >
+                <img
+                  src={qrImage}
+                  alt="QR Code"
+                  style={{
+                    width: '100px',
+                    height: '100px',
+                    borderRadius: '8px',
+                    backgroundColor: '#fff',
+                    padding: '0.5rem',
+                  }}
+                />
+                <img
+                  src={appStoreBadge}
+                  alt="App Store"
+                  style={{ height: '40px' }}
+                />
+                <img
+                  src={playStoreBadge}
+                  alt="Google Play"
+                  style={{ height: '40px' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Sms />
+      <Footer />
     </>
   );
 };

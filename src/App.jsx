@@ -8,6 +8,7 @@ import GetFridge from './pages/GetFridge';
 import Story from './pages/Story';
 import AppPage from './pages/AppPage';
 import Career from './pages/Career';
+import DietPage from './pages/DietPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/story" element={<Story/>} />
       <Route path="/app" element={<AppPage/>} />
       <Route path="/career" element={<Career/>} />
+      <Route path="/DietPage" element={<DietPage/>} />
     </Routes>
      </>
   )

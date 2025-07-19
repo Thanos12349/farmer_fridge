@@ -5,7 +5,6 @@ import '../style/LocationForm.css';
 const LocationForm = () => {
     const [showContactForm, setShowContactForm] = useState(false);
 
-    // Step 1: Address form state
     const [addressData, setAddressData] = useState({
         address: '',
         address2: '',
@@ -16,8 +15,6 @@ const LocationForm = () => {
     });
 
     const [addressErrors, setAddressErrors] = useState({});
-
-    // Step 2: Contact form state
     const [contactData, setContactData] = useState({
         firstName: '',
         lastName: '',
@@ -28,13 +25,11 @@ const LocationForm = () => {
 
     const [contactErrors, setContactErrors] = useState({});
 
-    // Handle input change for both forms
     const handleInputChange = (e, setData) => {
         const { name, value } = e.target;
         setData(prev => ({ ...prev, [name]: value }));
     };
 
-    // Validate address form
     const validateAddressForm = () => {
         const errors = {};
         if (!addressData.address.trim()) errors.address = 'Address is required.';
@@ -45,7 +40,6 @@ const LocationForm = () => {
         return errors;
     };
 
-    // Validate contact form
     const validateContactForm = () => {
         const errors = {};
         if (!contactData.firstName.trim()) errors.firstName = 'First name is required.';
@@ -85,10 +79,10 @@ const LocationForm = () => {
                 <>
                     <div className="d-flex align-items-center">
                         <div className="fs-3 fw-bold text-dark">
-                            <h1 className="text-decoration-none text-black">Farmer Fridge</h1><span className="text-info"></span>
+                            <h1 className="text-decoration-none text-black">DietIn</h1><span className="text-info"></span>
                         </div>
                     </div>
-                    <h3 className="mb-4 text-success">Where do you want the Fridge to go?</h3>
+                    <h3 className="mb-4 text-primary">Where do you want the Fridge to go?</h3>
                     <p className="text-muted">We’ll need the address of your location.</p>
                     <form onSubmit={handleAddressSubmit}>
                         <div className="row g-3">
@@ -112,7 +106,7 @@ const LocationForm = () => {
                             ))}
                         </div>
                         <div className="mt-4">
-                            <button type="submit" className="btn btn-success">OK</button>
+                            <button type="submit" className="btn btn-primary">OK</button>
                         </div>
                     </form>
                 </>
@@ -120,10 +114,10 @@ const LocationForm = () => {
                 <>
                     <div className="d-flex align-items-center">
                         <div className="fs-3 fw-bold text-dark">
-                            <h1 className="text-decoration-none text-black">Farmer Fridge</h1><span className="text-info"></span>
+                            <h1 className="text-decoration-none text-black">DietIn</h1><span className="text-info"></span>
                         </div>
                     </div>
-                    <h4 className="text-success mb-3">
+                    <h4 className="text-primary mb-3">
                         Great! Next, we'll need your <strong>Contact Information</strong>.
                     </h4>
                     <p className="text-muted fst-italic">
@@ -151,7 +145,7 @@ const LocationForm = () => {
                             ))}
                         </div>
                         <div className="mt-4">
-                            <button type="submit" className="btn btn-success">Submit</button>
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </>

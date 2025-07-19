@@ -44,7 +44,7 @@ const MealProcess = () => {
           </div>
         ))}
       </div>
-      <button className="btn btn-outline-success mt-3 px-4 py-2">LEARN MORE</button>
+      <button className="btn btn-outline-primary mt-3 px-4 py-2">LEARN MORE</button>
     </div>
   );
 };

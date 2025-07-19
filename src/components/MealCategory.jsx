@@ -9,7 +9,7 @@ const categories = [
     bg: '#fdb63b'
   },
   {
-    name: 'BREAKFAST',
+    name: 'DETOX JUICES',
     image: '/image/12.png',
     bg: '#f9c8cb'
   },
@@ -19,7 +19,7 @@ const categories = [
     bg: '#e7e1de'
   },
   {
-    name: 'BOWLS',
+    name: 'SMOOTHIE BOWLS',
     image: '/image/10.png',
     bg: '#fcd47c'
   }
@@ -48,7 +48,7 @@ const MealCategories = () => {
           </div>
         ))}
       </div>
-      <button className="btn btn-outline-success browse-btn mt-4">
+      <button className="btn btn-outline-primary browse-btn mt-4">
         BROWSE MENU
       </button>
     </div>

@@ -1,5 +1,5 @@
 .fridge-tabs {
-  background-color: #3d8707;
+  background: linear-gradient(to bottom, #4018c4,#3956ad,#6b88a5,#81bbf4 ) !important;
 }
 
 .nav-tabs .nav-link {

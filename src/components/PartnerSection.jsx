@@ -19,13 +19,13 @@ const PartnersSection = () => {
       {/* Images */}
       <div className="row g-4 mb-4">
         <div className="col-md-4">
-          <img src="/image/07.jpg" className="img-fluid rounded shadow-sm" alt="Fridge Outside" />
+          <img src="/image/07.jpg" className="img-fluid1 rounded shadow-sm" alt="Fridge Outside" />
         </div>
         <div className="col-md-4">
-          <img src="/image/05.jpg" className="img-fluid rounded shadow-sm" alt="Healthy Bowl" />
+          <img src="/image/05.jpg" className="img-fluid1 rounded shadow-sm" alt="Healthy Bowl" />
         </div>
         <div className="col-md-4">
-          <img src="/image/09.png" className="img-fluid rounded shadow-sm" alt="Meeting Fridge" />
+          <img src="/image/image12.png" className="img-fluid1 rounded shadow-sm" alt="Meeting Fridge" />
         </div>
       </div>
 

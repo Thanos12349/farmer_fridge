@@ -43,7 +43,7 @@ const Story = () => {
 
       <div className="hero-overlay">
         <div className="text-center text-white">
-          <h1 className="fw-bold fst-italic">Hii we are Farmers Fridge.</h1>
+          <h1 className="fw-bold fst-italic">Hii we are DietIn.</h1>
         </div>
       </div>
     </div>
@@ -93,7 +93,6 @@ const Story = () => {
 <div className="about-section py-5">
       <div className="container">
 
-        {/* Section 1 */}
         <div className="row align-items-center mb-5">
           <div className="col-md-6 text-center">
             <img src="/image/15.png" alt="It All Started" className="img-fluid rounded shadow" />
@@ -104,12 +103,11 @@ const Story = () => {
               We launched ten years ago with a single vending machine that offered fresh, handmade meals, mostly packaged in jars; it’s since grown into a multi-city operation serving thousands of customers each month.
             </p>
             <p>
-              The vision behind Farmer’s Fridge originated from our founder Luke’s experience as a traveling salesman. He struggled to find healthy and delicious food while on the road, and wanted to find a solution to that problem.
+              The vision behind DietIn originated from our founder Luke’s experience as a traveling salesman. He struggled to find healthy and delicious food while on the road, and wanted to find a solution to that problem.
             </p>
           </div>
         </div>
 
-        {/* Section 2 */}
         <div className="row align-items-center mb-5 flex-md-row-reverse">
           <div className="col-md-6 text-center">
             <img src="/image/15.png" alt="Our Mission" className="img-fluid rounded shadow" />
@@ -126,7 +124,6 @@ const Story = () => {
           </div>
         </div>
 
-        {/* Section 3 */}
         <div className="row align-items-center">
           <div className="col-md-6 text-center">
             <img src="/image/15.png" alt="All About the Food" className="img-fluid rounded shadow" />
@@ -191,7 +188,7 @@ const Story = () => {
             <div className="col-12 col-md-4 mb-4" key={index}>
               <img src={item.logo} alt={`logo-${index}`} className="img-fluid mb-3 press-logo" />
               <p className="mb-3">{item.headline}</p>
-              <a href={item.link} className="btn btn-outline-success btn-sm">READ MORE</a>
+              <a href={item.link} className="btn btn-outline-primary btn-sm">READ MORE</a>
             </div>
           ))}
         </div>
@@ -206,7 +203,7 @@ const Story = () => {
                         Join our team and help us build a new kind of food system.
                         
                     </p>
-                    <button className="btn btn-success mt-3">
+                    <button className="btn btn-primary mt-3">
                         View Open Positions
                     </button>
                 </div>

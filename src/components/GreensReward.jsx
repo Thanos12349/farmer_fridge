@@ -16,7 +16,7 @@ const GreensReward = () => {
               Don’t just eat your greens, earn them! For every $2 you spend, you earn 1 Green.
               Rack up 50 Greens, and you'll automatically score a $9 reward for your next purchase.
             </p>
-            <button className="btn btn-outline-success mt-3 px-4 py-2">
+            <button className="btn btn-outline-primary mt-3 px-4 py-2">
               DOWNLOAD OUR APP
             </button>
           </div>

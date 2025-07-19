@@ -16,7 +16,7 @@ const AppPage = () => {
 
             <div className="rewards-section text-center text-white py-5">
                 <div className="container">
-                    <h1 className="fw-bold mb-4">Welcome to the Farmer's Fridge Rewards Program</h1>
+                    <h1 className="fw-bold mb-4">Welcome to the DietIn Rewards Program</h1>
                     <p className="lead mb-4">
                         We've designed our app to best serve you – think rewards toward free food with every purchase,
                         live menu availability, mobile pay capabilities – and much more.
@@ -50,10 +50,10 @@ const AppPage = () => {
                         <div className="col-md-6 text-center">
                             <h4 className="fw-semibold">Earn Greens with Every Purchase</h4>
                             <p className="text-muted">
-                                Greens are the Farmer’s Fridge currency. Earn 1 Green for every $2 you spend. When you earn 50 Greens,
+                                Greens are the DietIn currency. Earn 1 Green for every $2 you spend. When you earn 50 Greens,
                                 you’ll automatically get a $9 reward to use on your next purchase.
                             </p>
-                            <a href="#" className="btn btn-outline-success rounded-pill px-4">
+                            <a href="#" className="btn btn-outline-primary rounded-pill px-4">
                                 START EARNING GREENS <i className="bi bi-box-arrow-up-right ms-2"></i>
                             </a>
                         </div>
@@ -81,7 +81,7 @@ const AppPage = () => {
                                 Plan which meal you’ll go for in advance, and view all nutritional and allergen information via the app.
                                 Browse the available menu at the Fridge you plan on visiting and plan a meal to satisfy your cravings.
                             </p>
-                            <a href="#" className="btn btn-outline-success px-4 rounded-pill mt-2">
+                            <a href="#" className="btn btn-outline-primary px-4 rounded-pill mt-2">
                                 BROWSE APP MENU <i className="bi bi-box-arrow-up-right ms-2"></i>
                             </a>
                         </div>
@@ -124,7 +124,7 @@ const AppPage = () => {
                     <p className="mb-4">
                         We offer multiple ways to quickly order your favorite items or try new items from our Fridges
                     </p>
-                    <a href="#" className="btn btn-outline-success mb-5 px-4 rounded-pill">
+                    <a href="#" className="btn btn-outline-primary mb-5 px-4 rounded-pill">
                         ORDER ON THE APP <i className="bi bi-box-arrow-up-right ms-2"></i>
                     </a>
 
@@ -170,7 +170,7 @@ const AppPage = () => {
                 <div className="text-center mb-4">
                     <h2><strong><em>Find Fridges Near You</em></strong></h2>
                     <p>Location services that will help you locate fresh food near you</p>
-                    <a href="#" className="btn btn-success">
+                    <a href="#" className="btn btn-primary">
                         FIND FRIDGES ON THE APP <i className="bi bi-box-arrow-up-right"></i>
                     </a>
                 </div>

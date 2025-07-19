@@ -22,7 +22,7 @@ const GetFridge = () => {
       <Dont />
       <Smart />
       <CustomerTrust />
-      {/* Additional sections can be added here if needed */}
+      
      
       <Sms />
       <Footer />

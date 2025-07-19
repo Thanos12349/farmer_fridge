@@ -50,6 +50,63 @@
   text-align: center;
 }
 
+.btn1, .btn2 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 20%;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.btn1 {
+  background-color: #dc3545; 
+}
+
+.btn2 {
+  background-color: #28a745; 
+}
+
+.btn1:hover {
+  background-color: #c82333; /* Darker on hover */
+}
+
+.btn2:hover {
+  background-color: #218838; /* Darker on hover */
+}
+
+.increment_div{
+  color: rgb(3, 27, 48)!important;
+}
+
+.btn1:active,
+.btn2:active {
+  transform: scale(0.95);
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counter-container span {
+  min-width: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+.list-group-item {
+  font-size: 1rem;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .flip-card {

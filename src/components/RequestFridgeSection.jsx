@@ -21,7 +21,7 @@ const FridgeTabsSection = () => {
             <button className={`nav-link ${activeTab === 'logistics' ? 'active' : ''}`} onClick={() => setActiveTab('logistics')}>LOGISTICS OF GETTING A FRIDGE</button>
           </li>
           <li className="nav-item">
-            <button className={`nav-link ${activeTab === 'way' ? 'active' : ''}`} onClick={() => setActiveTab('way')}>THE FARMER'S FRIDGE WAY</button>
+            <button className={`nav-link ${activeTab === 'way' ? 'active' : ''}`} onClick={() => setActiveTab('way')}>THE DietIn WAY</button>
           </li>
         </ul>
 
@@ -101,16 +101,16 @@ const FridgeTabsSection = () => {
 
           <div className="col-md-5 text-center">
             {activeTab === 'start' && (
-              <img src="/image/07.jpg" className="img-fluid shadow rounded" alt="Checklist" />
+              <img src="/image/image17.png" className="img-fluid shadow rounded" alt="Checklist" />
             )}
             {activeTab === 'meal' && (
-              <img src="/image/07.jpg" className="img-fluid shadow rounded" alt="Meal Jar" />
+              <img src="/image/image20.png" className="img-fluid shadow rounded" alt="Meal Jar" />
             )}
             {activeTab === 'way' && (
-              <img src="/image/07.jpg" className="img-fluid shadow rounded" alt="Meal Jar" />
+              <img src="/image/08.jpg" className="img-fluid shadow rounded" alt="Meal Jar" />
             )}
             {activeTab === 'logistics' && (
-              <img src="/image/07.jpg" className="img-fluid shadow rounded" alt="Meal Jar" />
+              <img src="/image/image23.png" className="img-fluid shadow rounded" alt="Meal Jar" />
             )}
           </div>
         </div>
